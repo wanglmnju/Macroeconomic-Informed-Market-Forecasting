@@ -1,6 +1,8 @@
 # Macroeconomic-Informed-Market-Forecasting
 
 Problem definition
+
+
 Objective:
 Predict 5-day forward log returns of the NASDAQ Composite Index using only economic time-series data that was available in real-time, with a focus on Federal Reserve indicators, Treasury yields, employment data, inflation, and market volatility.
 
