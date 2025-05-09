@@ -1,41 +1,88 @@
 # Macroeconomic-Informed-Market-Forecasting
 
-Problem definition
+🧠 Objective
+This project was completed as part of a technical challenge for a final-round interview with Data Analysis Inc. (DAI). The goal was to build a predictive model that forecasts the 5-day forward log return (with a 1-day lag) of the NASDAQ index (NASDAQCOM), using only information available at the time of prediction.
 
+🗃️ Data Sources
+All economic indicators used are publicly available via:
 
-Objective:
-Predict 5-day forward log returns of the NASDAQ Composite Index using only economic time-series data that was available in real-time, with a focus on Federal Reserve indicators, Treasury yields, employment data, inflation, and market volatility.
+FRED (Federal Reserve Economic Data)
 
-Mathematically:
+ALFRED (Archival FRED) – used for indicators that are subject to revisions (e.g., CPI and Nonfarm Payrolls)
 
-For each trading day 
-, predict:
+Predictors include:
 
-(6-day ahead price vs. 1-day ahead price, giving a 5-day forward return with 1-day lag)
+Effective Federal Funds Rate
 
+2-Year Treasury Rate
 
-Constraints:
-No future data leakage
-Must handle revised data using ALFRED
-Treat zero values in NASDAQCOM as NULLs and drop them
-Minimum Features: ["FEDFUNDS", "DGS2", "DGS10", "PAYEMS", "CPIAUCSL", "VIXCLS"]
+10-Year Treasury Rate
 
-Why This Matters:
-Trading Strategy Development
-Predict short-term market movements to inform tactical asset allocation or hedging decisions.
+Nonfarm Payrolls (from ALFRED)
 
-Macro-Risk Assessment
-Quantify how Federal Reserve policy (rates), Treasury markets (yield curve), and economic health (NFP/CPI) impact tech stock performance.
+Consumer Price Index (CPI-U, from ALFRED)
 
-Data Challenges
-Real-world constraints: Avoid look-ahead bias by using only data available at prediction time (via ALFRED's vintage data).
+Volatility Index (VIX)
 
+🔄 Prediction Target
+The model aims to predict:
 
-Business Impact:
-A successful model could:
+scss
+Copy
+Edit
+log(NASDAQ_t+5 / NASDAQ_t)
+with a one-day lag for prediction execution (i.e., at time t-1, we use all available info to predict log_return(t, t+5)).
 
-For Asset Managers: Signal short-term rebalancing opportunities in tech-heavy portfolios.
+🧪 Modeling Approach
+Data Preprocessing
 
-For Risk Teams: Provide early warnings when macro conditions (e.g., yield curve inversion) predict NASDAQ drawdowns.
+Removed zero values in NASDAQCOM (treated as NULLs)
 
-For DAI: Demonstrate how real-time economic data pipelines can generate alpha in systematic strategies.
+Used only data available at each point in time to avoid look-ahead bias
+
+Interpolated and aligned indicators with NASDAQ dates
+
+Feature Engineering
+
+Created lagged versions of each macroeconomic indicator
+
+Standardized features
+
+Added temporal features (day of week, month, etc.)
+
+Models Used
+
+Baseline: Linear Regression, Ridge
+
+Tree-based: XGBoost Regressor
+
+Deep Learning: LSTM (Keras/TensorFlow) for time-dependent modeling
+
+Evaluation
+
+Train-test split aligned with time series (no random shuffling)
+
+Evaluated using RMSE, MAE, and directional accuracy (up/down prediction)
+
+📊 Key Results
+XGBoost achieved lowest RMSE and strong directional accuracy.
+
+LSTM captured momentum patterns but was prone to overfitting.
+
+Feature importance showed Treasury rates and VIX were leading indicators.
+
+🚀 Future Work
+Incorporate additional lag structures and macro sentiment features.
+
+Test rolling-window validation or walk-forward optimization.
+
+Deploy model via a REST API for real-time testing.
+
+🛠️ Technologies Used
+Python, pandas, NumPy, scikit-learn
+
+XGBoost, TensorFlow/Keras
+
+matplotlib, seaborn
+
+FRED/ALFRED API access via pandas_datareader
