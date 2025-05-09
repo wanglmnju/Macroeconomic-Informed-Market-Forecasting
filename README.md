@@ -1,9 +1,11 @@
 # Macroeconomic-Informed-Market-Forecasting
 
 🧠 Objective
+
 This project was completed as part of a technical challenge for a final-round interview with Data Analysis Inc. (DAI). The goal was to build a predictive model that forecasts the 5-day forward log return (with a 1-day lag) of the NASDAQ index (NASDAQCOM), using only information available at the time of prediction.
 
 🗃️ Data Sources
+
 All economic indicators used are publicly available via:
 
 FRED (Federal Reserve Economic Data)
@@ -25,13 +27,12 @@ Consumer Price Index (CPI-U, from ALFRED)
 Volatility Index (VIX)
 
 🔄 Prediction Target
+
 The model aims to predict:
 
-scss
-Copy
-Edit
 log(NASDAQ_t+5 / NASDAQ_t)
-with a one-day lag for prediction execution (i.e., at time t-1, we use all available info to predict log_return(t, t+5)).
+
+With a one-day lag for prediction execution (i.e., at time t-1, we use all available info to predict log_return(t, t+5)).
 
 🧪 Modeling Approach
 Data Preprocessing
