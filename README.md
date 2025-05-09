@@ -8,7 +8,7 @@ This project was completed as part of a technical challenge for a final-round in
 
 All economic indicators used are publicly available via:
 
-FRED (Federal Reserve Economic Data)
+-- FRED (Federal Reserve Economic Data)
 
 ALFRED (Archival FRED) – used for indicators that are subject to revisions (e.g., CPI and Nonfarm Payrolls)
 
