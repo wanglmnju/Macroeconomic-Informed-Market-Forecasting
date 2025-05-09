@@ -35,7 +35,7 @@ log(NASDAQ_t+5 / NASDAQ_t)
 With a one-day lag for prediction execution (i.e., at time t-1, we use all available info to predict log_return(t, t+5)).
 
 🧪 Modeling Approach
-Data Preprocessing
+1. Data Preprocessing
 
 - Removed zero values in NASDAQCOM (treated as NULLs)
 
@@ -43,7 +43,7 @@ Data Preprocessing
 
 - Interpolated and aligned indicators with NASDAQ dates
 
-Feature Engineering
+2. Feature Engineering
 
 - Created lagged versions of each macroeconomic indicator
 
@@ -54,7 +54,7 @@ Feature Engineering
 
   - Policy Spread: Measures how much markets "believe" the Fed (e.g., negative spread = tight policy)
 
-Models Used
+3. Models Used
 
 Baseline: Average, Naive, Trend
 
@@ -66,7 +66,7 @@ statistical: SARIMAX
 
 Deep Learning: LSTM (Pytorch) for time-dependent modeling
 
-Evaluation
+4. Evaluation
 
 Train-test split aligned with time series (no random shuffling)
 
