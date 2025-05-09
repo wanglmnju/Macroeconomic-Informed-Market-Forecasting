@@ -68,9 +68,9 @@ With a one-day lag for prediction execution (i.e., at time t-1, we use all avail
 
 4. Evaluation
 
-   Train-test split aligned with time series (no random shuffling)
+- Train-test split aligned with time series (no random shuffling)
 
-Evaluated using RMSE, MAE
+- Evaluated using RMSE, MAE
 
 📊 Key Results
 - Linear regression achieved the lowest MAE.
