@@ -32,9 +32,10 @@ The model aims to predict:
 
 log(NASDAQ_t+5 / NASDAQ_t)
 
-With a one-day lag for prediction execution (i.e., at time t-1, we use all available info to predict log_return(t, t+5)).
+With a one-day lag for prediction execution (i.e., at time t+1, we use all available info to predict log_return(t+1, t+6)).
 
 🧪 Modeling Approach
+
 1. Data Preprocessing
 
 - Removed zero values in NASDAQCOM (treated as NULLs)
