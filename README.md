@@ -87,10 +87,10 @@ With a one-day lag for prediction execution (i.e., at time t-1, we use all avail
 - Deploy the model via a REST API for real-time testing.
 
 🛠️ Technologies Used
-Python, pandas, NumPy, scikit-learn
+- Python, pandas, NumPy, scikit-learn
 
-XGBoost, Pytorch
+- XGBoost, Pytorch
 
-matplotlib, seaborn
+- matplotlib, seaborn
 
-FRED/ALFRED API access via API
+- FRED/ALFRED API access via API
