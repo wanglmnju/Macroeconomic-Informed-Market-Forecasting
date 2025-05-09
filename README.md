@@ -49,13 +49,20 @@ Feature Engineering
 
 - Standardized features
 
-- Added temporal features (day of week, month, etc.)
+- Created new features:
+  - Term Spread: Captures market expectations (inverted curve = recession signal)
+
+  - Policy Spread: Measures how much markets "believe" the Fed (e.g., negative spread = tight policy)
 
 Models Used
 
-Baseline: Linear Regression, Ridge
+Baseline: Average, Naive, Trend
+
+Regression: Linear Regression
 
 Tree-based: XGBoost Regressor
+
+statistical: SARIMAX
 
 Deep Learning: LSTM (Pytorch) for time-dependent modeling
 
@@ -68,7 +75,7 @@ Evaluated using RMSE, MAE
 📊 Key Results
 Linear regression achieved the lowest MAE.
 
-XGBoost captured momentum patterns but was prone to overfitting.
+XGBoost/LSTM captured momentum patterns but was prone to overfitting.
 
 Feature importance showed FRED and CPI were leading indicators.
 
