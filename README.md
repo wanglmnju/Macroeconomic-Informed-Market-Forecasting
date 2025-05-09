@@ -56,35 +56,35 @@ With a one-day lag for prediction execution (i.e., at time t-1, we use all avail
 
 3. Models Used
 
-Baseline: Average, Naive, Trend
+- Baseline: Average, Naive, Trend
 
-Regression: Linear Regression
+- Regression: Linear Regression
 
-Tree-based: XGBoost Regressor
+- Tree-based: XGBoost Regressor
 
-statistical: SARIMAX
+- statistical: SARIMAX
 
-Deep Learning: LSTM (Pytorch) for time-dependent modeling
+- Deep Learning: LSTM (Pytorch) for time-dependent modeling
 
 4. Evaluation
 
-Train-test split aligned with time series (no random shuffling)
+   Train-test split aligned with time series (no random shuffling)
 
 Evaluated using RMSE, MAE
 
 📊 Key Results
-Linear regression achieved the lowest MAE.
+- Linear regression achieved the lowest MAE.
 
-XGBoost/LSTM captured momentum patterns but was prone to overfitting.
+- XGBoost/LSTM captured momentum patterns but was prone to overfitting.
 
-Feature importance showed FRED and CPI were leading indicators.
+- Feature importance showed FRED and CPI were leading indicators.
 
 🚀 Future Work
-Incorporate additional lag structures and macro sentiment features.
+- Incorporate additional lag structures and macro sentiment features.
 
-Test rolling-window validation or walk-forward optimization.
+- Test rolling-window validation or walk-forward optimization.
 
-Deploy the model via a REST API for real-time testing.
+- Deploy the model via a REST API for real-time testing.
 
 🛠️ Technologies Used
 Python, pandas, NumPy, scikit-learn
