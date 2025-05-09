@@ -24,7 +24,7 @@ Predictors include:
 
 - Consumer Price Index (CPI-U, from ALFRED)
 
-Volatility Index (VIX)
+- Volatility Index (VIX)
 
 🔄 Prediction Target
 
