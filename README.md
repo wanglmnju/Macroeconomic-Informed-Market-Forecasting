@@ -94,4 +94,4 @@ With a one-day lag for prediction execution (i.e., at time t+1, we use all avail
 
 - matplotlib, seaborn
 
-- FRED/ALFRED API access via API
+- FRED/ALFRED API access
