@@ -8,21 +8,21 @@ This project was completed as part of a technical challenge for a final-round in
 
 All economic indicators used are publicly available via:
 
--- FRED (Federal Reserve Economic Data)
+- FRED (Federal Reserve Economic Data)
 
-ALFRED (Archival FRED) – used for indicators that are subject to revisions (e.g., CPI and Nonfarm Payrolls)
+- ALFRED (Archival FRED) – used for indicators that are subject to revisions (e.g., CPI and Nonfarm Payrolls)
 
 Predictors include:
 
-Effective Federal Funds Rate
+- Effective Federal Funds Rate
 
-2-Year Treasury Rate
+- 2-Year Treasury Rate
 
-10-Year Treasury Rate
+- 10-Year Treasury Rate
 
-Nonfarm Payrolls (from ALFRED)
+- Nonfarm Payrolls (from ALFRED)
 
-Consumer Price Index (CPI-U, from ALFRED)
+- Consumer Price Index (CPI-U, from ALFRED)
 
 Volatility Index (VIX)
 
@@ -37,19 +37,19 @@ With a one-day lag for prediction execution (i.e., at time t-1, we use all avail
 🧪 Modeling Approach
 Data Preprocessing
 
-Removed zero values in NASDAQCOM (treated as NULLs)
+- Removed zero values in NASDAQCOM (treated as NULLs)
 
-Used only data available at each point in time to avoid look-ahead bias
+- Used only data available at each point in time to avoid look-ahead bias
 
-Interpolated and aligned indicators with NASDAQ dates
+- Interpolated and aligned indicators with NASDAQ dates
 
 Feature Engineering
 
-Created lagged versions of each macroeconomic indicator
+- Created lagged versions of each macroeconomic indicator
 
-Standardized features
+- Standardized features
 
-Added temporal features (day of week, month, etc.)
+- Added temporal features (day of week, month, etc.)
 
 Models Used
 
@@ -57,33 +57,33 @@ Baseline: Linear Regression, Ridge
 
 Tree-based: XGBoost Regressor
 
-Deep Learning: LSTM (Keras/TensorFlow) for time-dependent modeling
+Deep Learning: LSTM (Pytorch) for time-dependent modeling
 
 Evaluation
 
 Train-test split aligned with time series (no random shuffling)
 
-Evaluated using RMSE, MAE, and directional accuracy (up/down prediction)
+Evaluated using RMSE, MAE
 
 📊 Key Results
-XGBoost achieved lowest RMSE and strong directional accuracy.
+Linear regression achieved the lowest MAE.
 
-LSTM captured momentum patterns but was prone to overfitting.
+XGBoost captured momentum patterns but was prone to overfitting.
 
-Feature importance showed Treasury rates and VIX were leading indicators.
+Feature importance showed FRED and CPI were leading indicators.
 
 🚀 Future Work
 Incorporate additional lag structures and macro sentiment features.
 
 Test rolling-window validation or walk-forward optimization.
 
-Deploy model via a REST API for real-time testing.
+Deploy the model via a REST API for real-time testing.
 
 🛠️ Technologies Used
 Python, pandas, NumPy, scikit-learn
 
-XGBoost, TensorFlow/Keras
+XGBoost, Pytorch
 
 matplotlib, seaborn
 
-FRED/ALFRED API access via pandas_datareader
+FRED/ALFRED API access via API
