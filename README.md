@@ -30,9 +30,9 @@ Predictors include:
 
 The model aims to predict:
 
-log(NASDAQ_t+5 / NASDAQ_t)
+log(NASDAQ_t+6 / NASDAQ_t+1)
 
-With a one-day lag for prediction execution (i.e., at time t+1, we use all available info to predict log_return(t+1, t+6)).
+With a one-day lag for prediction execution (i.e., at time t, we use all available info to predict log_return(t+1, t+6)).
 
 🧪 Modeling Approach
 
