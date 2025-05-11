@@ -2,7 +2,7 @@
 
 🧠 Objective
 
-This project was completed as part of a technical challenge for a final-round interview with Data Analysis Inc. (DAI). The goal was to build a predictive model that forecasts the 5-day forward log return (with a 1-day lag) of the NASDAQ index (NASDAQCOM), using only information available at the time of prediction.
+The goal was to build a predictive model that forecasts the 5-day forward log return (with a 1-day lag) of the NASDAQ index (NASDAQCOM), using only information available at the time of prediction.
 
 🗃️ Data Sources
 
